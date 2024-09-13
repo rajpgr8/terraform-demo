@@ -18,5 +18,5 @@ terraform plan --var-file config/dev.tfvars
 terraform apply --var-file config/dev.tfvars -auto-approve
 
 terraform apply --refresh-only --var-file config/dev.tfvars
-terraform destroy
+terraform destroy --var-file config/dev.tfvars
 ```

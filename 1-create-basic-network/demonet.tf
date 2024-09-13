@@ -27,3 +27,14 @@ resource "google_compute_firewall" "demonet_allow_http_ssh_rdp_icmp" {
     protocol = "icmp"
   }
 }
+
+# Create a VM
+module "vm" {
+	source = "./modules/vm/"
+	instance_name = var.instance_name
+	instance_zone = var.instance_zone
+	instance_type = var.instance_type
+	instance_tags = var.instance_tags
+	network = google_compute_network.demonet.self_link
+	subnetwork = google_compute_subnetwork.demosubnet-us.self_link
+}

@@ -1,12 +1,3 @@
-variable "access_token" {
-  type = string
-}
-
-variable "project_id" {
-  type = string
-}
-
-# For VM
 variable "instance_name" {
   type = string
 }
@@ -19,4 +10,10 @@ variable "instance_type" {
 variable "instance_tags" {
   type = list
   default = [""]
+}
+variable "network" {
+  type = string
+}
+variable "subnetwork" {
+  type = string
 }
